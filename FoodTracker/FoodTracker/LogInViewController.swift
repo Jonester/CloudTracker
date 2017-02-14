@@ -90,7 +90,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
             let defaults = UserDefaults.standard
             defaults.set(username, forKey: "Username")
             defaults.set(password, forKey: "Password")
-            defaults.set(rawJSON["user"], forKey: "user")
+            defaults.set(rawJSON["user"], forKey: "User")
             
             self.dismiss(animated: true, completion: nil)
         }

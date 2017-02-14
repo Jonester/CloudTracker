@@ -65,8 +65,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="A0W-9F-gmn" kind="presentation" id="tBf-ha-c1Y"/>
-                        <segue destination="6i4-dO-Bsf" kind="presentation" id="lRG-ps-o8u"/>
+                        <segue destination="A0W-9F-gmn" kind="presentation" identifier="SignUpController" id="tBf-ha-c1Y"/>
+                        <segue destination="6i4-dO-Bsf" kind="presentation" identifier="LogInController" id="lRG-ps-o8u"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZHp-yK-be7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -202,6 +202,22 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="MWm-bn-1XW">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Tracker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gro-gd-sas">
+                                            <rect key="frame" x="96" y="70" width="182" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="R0g-UD-KGX"/>
+                                                <constraint firstAttribute="width" constant="182" id="TM8-hM-Qik"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="gro-gd-sas" firstAttribute="top" secondItem="MWm-bn-1XW" secondAttribute="top" constant="70" id="Uyj-28-HlS"/>
+                                        <constraint firstItem="gro-gd-sas" firstAttribute="centerX" secondItem="MWm-bn-1XW" secondAttribute="centerX" id="bL5-wT-OmX"/>
+                                    </constraints>
                                 </view>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <blurEffect style="light"/>
@@ -242,13 +258,6 @@
                                     <constraint firstItem="FMf-RN-Uxo" firstAttribute="centerX" secondItem="BfI-fx-9NR" secondAttribute="centerX" id="zkl-av-2SL"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Food Tracker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gro-gd-sas">
-                                <rect key="frame" x="96" y="62" width="182" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tve-rU-qd9">
                                 <rect key="frame" x="148" y="491" width="79" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -272,13 +281,12 @@
                     <connections>
                         <outlet property="passwordTextField" destination="peR-Vt-NJQ" id="Rj0-fb-7G9"/>
                         <outlet property="passwordWarning" destination="Qrb-PR-jlV" id="hdU-Ad-5bY"/>
-                        <outlet property="signUp" destination="Tve-rU-qd9" id="1RS-eY-pfZ"/>
                         <outlet property="usernameTextField" destination="FMf-RN-Uxo" id="Vrc-h8-qgz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9X6-pi-i1L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="233" y="-546"/>
+            <point key="canvasLocation" x="232.80000000000001" y="-546.47676161919048"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="OYS-GP-CcZ">
@@ -337,9 +345,12 @@
                                     <constraint firstItem="7wm-7T-eYV" firstAttribute="centerX" secondItem="12D-jH-lJ3" secondAttribute="centerX" id="t6g-q1-Zxz"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Food Tracker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ack-1q-LOh">
-                                <rect key="frame" x="96" y="62" width="182" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Tracker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ack-1q-LOh">
+                                <rect key="frame" x="96" y="70" width="182" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="182" id="WzL-jO-3OG"/>
+                                    <constraint firstAttribute="height" constant="21" id="qpL-UC-P5y"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -358,16 +369,17 @@
                         <constraints>
                             <constraint firstItem="12D-jH-lJ3" firstAttribute="centerX" secondItem="Vas-ph-PgZ" secondAttribute="centerX" id="2XU-39-QZ7"/>
                             <constraint firstItem="12D-jH-lJ3" firstAttribute="centerY" secondItem="Vas-ph-PgZ" secondAttribute="centerY" id="4eq-BD-zKz"/>
+                            <constraint firstItem="ack-1q-LOh" firstAttribute="centerX" secondItem="Vas-ph-PgZ" secondAttribute="centerX" id="BQz-9R-9Id"/>
                             <constraint firstItem="tAF-cZ-n1q" firstAttribute="top" secondItem="lAH-Xp-9GS" secondAttribute="bottom" id="NLJ-Vg-InI"/>
                             <constraint firstItem="lAH-Xp-9GS" firstAttribute="top" secondItem="Vas-ph-PgZ" secondAttribute="top" id="OWO-Rt-jZK"/>
                             <constraint firstAttribute="trailing" secondItem="lAH-Xp-9GS" secondAttribute="trailing" id="bZi-dl-RuG"/>
                             <constraint firstItem="lAH-Xp-9GS" firstAttribute="leading" secondItem="Vas-ph-PgZ" secondAttribute="leading" id="rW8-xM-OVq"/>
+                            <constraint firstItem="ack-1q-LOh" firstAttribute="top" secondItem="gAF-UN-7vf" secondAttribute="bottom" constant="50" id="uHn-fy-A4t"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="infoWarning" destination="Ktr-p4-LUI" id="WeL-2t-HyF"/>
                         <outlet property="passwordTextField" destination="ahl-fD-4zq" id="T9n-fv-OaI"/>
-                        <outlet property="signUp" destination="w9Z-oI-7rt" id="rB5-fA-ZMA"/>
                         <outlet property="usernameTextField" destination="7wm-7T-eYV" id="meL-io-Uyx"/>
                     </connections>
                 </viewController>

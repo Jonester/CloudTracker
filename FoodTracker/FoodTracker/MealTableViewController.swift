@@ -32,6 +32,20 @@ class MealTableViewController: UITableViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
+        let defaults = UserDefaults.standard
+        
+        guard defaults.string(forKey: "Username") != nil else {
+            performSegue(withIdentifier: "SignUpController", sender: self)
+            return
+        }
+        guard defaults.string(forKey: "Password") != nil else {
+            performSegue(withIdentifier: "SignUpController", sender: self)
+            return
+        }
+        guard defaults.dictionary(forKey: "User") != nil else {
+            performSegue(withIdentifier: "SignUpController", sender: self)
+            return
+        }
         
     }
     
@@ -136,7 +150,11 @@ class MealTableViewController: UITableViewController {
             
             let selectedMeal = meals[indexPath.row]
             mealDetailViewController.meal = selectedMeal
-            
+        
+        case "SignUpController": break
+
+        case "LogInController": break
+        
         default:
             fatalError("Unexpected Segue Identifier; \(segue.identifier)")
         }
